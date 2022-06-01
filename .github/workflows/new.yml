@@ -2,7 +2,7 @@ name: New
 on: push
 
 env:
-  RELEASE: 2022.06.01.1055
+  RELEASE: 2022.06.01.1105
 
 jobs:
 
