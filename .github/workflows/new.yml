@@ -1,8 +1,8 @@
 name: New
-on: push
+on: workflow_dispatch
 
 env:
-  RELEASE: 2022.06.01.1105
+  RELEASE: 2022.06.01.1106
 
 jobs:
 
