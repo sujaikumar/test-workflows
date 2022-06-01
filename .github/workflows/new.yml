@@ -2,7 +2,7 @@ name: New
 on: workflow_dispatch
 
 env:
-  RELEASE: 2022.06.01.1044
+  RELEASE: 2022.06.01.1050
 
 jobs:
 
