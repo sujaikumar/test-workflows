@@ -2,13 +2,13 @@ name: New
 on: push
 
 env:
-  RELEASE: 2022.06.01.1118
+  RELEASE: 2022.06.01.1140
 
 jobs:
 
   build1:
-    runs-on: ubuntu-latest
-#     runs-on: [ self-hosted, runner1 ]
+#     runs-on: ubuntu-latest
+    runs-on: [ self-hosted, runner1 ]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +20,9 @@ jobs:
       - name: Run a one-line script
         run:  |
           echo "build1" > test.txt
+          echo "build1" > test2.txt
           date >> test.txt
+          date >> test2.txt
       - name: Commit files in branch
         run: |
           git config --local user.email "sujaikumar@gmail.com"
@@ -34,8 +36,8 @@ jobs:
           branch: ${{ env.RELEASE }}
 
   build2:
-    runs-on: ubuntu-latest
-#     runs-on: [ self-hosted, runner2 ]
+#     runs-on: ubuntu-latest
+    runs-on: [ self-hosted, runner2 ]
     needs: build1
 
     steps:
