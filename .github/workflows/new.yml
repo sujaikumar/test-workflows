@@ -2,12 +2,13 @@ name: New
 on: workflow_dispatch
 
 env:
-  RELEASE: 2022.06.01.1027
+  RELEASE: 2022.06.01.1044
 
 jobs:
 
   build1:
-    runs-on: [ self-hosted, runner1 ]
+    runs-on: ubuntu-latest
+#     runs-on: [ self-hosted, runner1 ]
 
     steps:
       - name: Create a new branch
@@ -26,7 +27,8 @@ jobs:
           branch: ${{ env.RELEASE }}
 
   build2:
-    runs-on: [ self-hosted, runner2 ]
+    runs-on: ubuntu-latest
+#     runs-on: [ self-hosted, runner2 ]
     needs: build1
 
     steps:
