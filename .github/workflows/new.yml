@@ -1,8 +1,8 @@
 name: New
-on: workflow_dispatch
+on: push
 
 env:
-  RELEASE: 2022.06.01.1050
+  RELEASE: 2022.06.01.1055
 
 jobs:
 
@@ -12,8 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ env.RELEASE }}
+      - name: create branch
+        run:  git checkout -b ${{ env.RELEASE }}
       - name: Run a one-line script
         run:  |
           echo "build1" > test.txt
